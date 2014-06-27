@@ -1,5 +1,3 @@
-== README
-
 This is the API for a voice message system.
 
 
