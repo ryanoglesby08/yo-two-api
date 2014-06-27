@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :voice_messages, only: [:index, :show, :create]
+
+  resources :users, only: [:index, :show, :create]
 
   resources :hunts, only: [:index, :show, :create] do
     post :start, on: :member

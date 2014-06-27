@@ -13,8 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       render :show, status: :created, location: @user
     else
-      @errors = @user.errors.full_messages
-      render 'shared/errors', status: :unprocessable_entity
+      render_errors :unprocessable_entity, @user.errors.full_messages
     end
   end
 
