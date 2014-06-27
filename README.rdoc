@@ -1,28 +1,75 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is the API for a voice message system.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+API Endpoints
+-----------------
+* All endpoints are JSON
+
+GET /
+-> Returns a status check
+
+GET /users
+    -> Get a list of users
+GET /users/:id
+    -> Get a single user
+POST /users
+    -> Create a new user
+
+GET /voice_messages?for=<user_id>
+    -> Get a list of voice messages for a user
+GET /voice_messages/:id
+    -> Get a single voice message
+POST /voice_messages
+    -> Create a new voice message
+
+
+Objects Contracts
+------------------
+### User:
+
+
+Get:
+```json
+{
+    "id": integer
+    "name": string
+    "created_at": datetime
+    "updated_at": datetime
+}
+```
+
+Creation:
+```json
+{
+    "user": {
+        "name": string (required)
+    }
+}
+```
+
+### Voice Message:
+
+Get:
+```json
+{
+    "id": integer
+    "location": string,
+    "from": integer,
+    "to": integer
+    "created_at": datetime
+    "updated_at": datetime
+}
+```
+
+Creation:
+```json
+{
+    "voice_message": {
+        "location": string (required),
+        "from": integer (required),
+        "to": integer (required),
+    }
+}
+```

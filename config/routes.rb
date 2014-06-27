@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
   resources :voice_messages, only: [:index, :show, :create]
-
   resources :users, only: [:index, :show, :create]
-
-  resources :hunts, only: [:index, :show, :create] do
-    post :start, on: :member
-
-    resources :hunters, only: [:index, :show, :create]
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
