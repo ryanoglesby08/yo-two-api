@@ -14,7 +14,7 @@ class HuntersController < ApplicationController
       render_errors(:bad_request, "Unable to start hunting. Hunt '#{hunt.name}' is not active") and return
     end
 
-    @hunter = hunt.hunters.build(start_time: Time.now)
+    @hunter = hunt.hunters.build(hunter_params.merge(start_time: Time.now))
 
     if @hunter.save
       render :show, status: :created, location: [hunt, @hunter]
@@ -22,4 +22,10 @@ class HuntersController < ApplicationController
       render_errors :unprocessable_entity, @hunter.errors.full_messages
     end
   end
+
+  private
+
+    def hunter_params
+      params.require(:hunter).permit(:name)
+    end
 end
