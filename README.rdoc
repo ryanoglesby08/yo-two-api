@@ -5,32 +5,38 @@ This is the API for a voice message system.
 
 API Endpoints
 -----------------
-* All endpoints are JSON
+
+**All endpoints are JSON**
 
 GET /
--> Returns a status check
+Returns a status check
 
 GET /users
-    -> Get a list of users
+Get a list of users
+
 GET /users/:id
-    -> Get a single user
+Get a single user
+
 POST /users
-    -> Create a new user
+Create a new user
 
 GET /voice_messages?for=<user_id>
-    -> Get a list of voice messages for a user
+Get a list of voice messages for a user
+
 GET /voice_messages/:id
-    -> Get a single voice message
+Get a single voice message
+
 POST /voice_messages
-    -> Create a new voice message
+Create a new voice message
 
 
 Objects Contracts
 ------------------
+
 ### User:
 
-
 Get:
+
 ```json
 {
     "id": integer
@@ -41,6 +47,7 @@ Get:
 ```
 
 Creation:
+
 ```json
 {
     "user": {
@@ -52,6 +59,7 @@ Creation:
 ### Voice Message:
 
 Get:
+
 ```json
 {
     "id": integer
@@ -64,6 +72,7 @@ Get:
 ```
 
 Creation:
+
 ```json
 {
     "voice_message": {
