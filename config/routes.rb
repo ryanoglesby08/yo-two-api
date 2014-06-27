@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+
   resources :hunts, only: [:index, :show, :create] do
     post :start, on: :member
 

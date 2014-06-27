@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   layout :false
 
+  rescue_from ActionController::ParameterMissing do |exception|
+    render_errors :bad_request, exception.message
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    render_errors :not_found, exception.message
+  end
+
   def render_errors(status, *errors)
     @errors = [errors].flatten
     render 'shared/errors', status: status
