@@ -15,7 +15,7 @@ class HuntsController < ApplicationController
     if @hunt.save
       render :show, status: :created, location: @hunt
     else
-      render json: @hunt.errors, status: :unprocessable_entity
+      render_errors :unprocessable_entity, @hunt.errors.full_messages
     end
   end
 

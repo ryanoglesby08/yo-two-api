@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :hunts, only: [:index, :show, :create] do
     post :start, on: :member
+
+    resources :hunters, only: [:index, :show, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
