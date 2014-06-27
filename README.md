@@ -6,25 +6,29 @@ API Endpoints
 
 **All endpoints are JSON**
 
-GET /
+GET / <br/>
 Returns a status check
 
-GET /users
+<br/>
+
+GET /users <br/>
 Get a list of users
 
-GET /users/:id
+GET /users/:id <br/>
 Get a single user
 
-POST /users
+POST /users <br/>
 Create a new user
 
-GET /voice_messages?for=<user_id>
+<br/>
+
+GET /voice_messages?for=:user_id <br/>
 Get a list of voice messages for a user
 
-GET /voice_messages/:id
+GET /voice_messages/:id <br/>
 Get a single voice message
 
-POST /voice_messages
+POST /voice_messages <br/>
 Create a new voice message
 
 
