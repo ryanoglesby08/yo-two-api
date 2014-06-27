@@ -9,7 +9,6 @@ API Endpoints
 GET / <br/>
 Returns a status check
 
-<br/>
 
 GET /users <br/>
 Get a list of users
@@ -20,7 +19,6 @@ Get a single user
 POST /users <br/>
 Create a new user
 
-<br/>
 
 GET /voice_messages?for=:user_id <br/>
 Get a list of voice messages for a user
