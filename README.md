@@ -17,7 +17,11 @@ Install the gem dependencies with `bundle install --path=vendor/bundle`
 
 Make sure Postgres is running.
 
+Setup the DB with `bin/rake db:create db:migrate`
+
 Run the server with `bin/rails s`
+
+Hit "http://localhost:3000?format=json" in your browser to confirm its running
 
 
 API Endpoints
