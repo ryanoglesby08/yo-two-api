@@ -1,29 +1,48 @@
 This is the API for a voice message system.
 
+Requirements
+--------------------------
+* Ruby 2.1.1
+* Bundler
+* Postgres
+
+Setup Instructions
+--------------------------
+`cd` into the project's root directory
+
+If you have rvm installed correctly and you do not have the correct version of Ruby, you will be prompted to download it.
+If you need to do so, follow the instructions, then `cd .`
+
+Install the gem dependencies with `bundle install --path=vendor/bundle`
+
+Make sure Postgres is running.
+
+Run the server with `bin/rails s`
+
 
 API Endpoints
------------------
+--------------------------
 
 **All endpoints are JSON**
 
-GET / <br/>
+GET /?format=json <br/>
 Returns a status check
 
 
-GET /users <br/>
+GET /users.json <br/>
 Get a list of users
 
-GET /users/:id <br/>
+GET /users/:id.json <br/>
 Get a single user
 
 POST /users <br/>
 Create a new user
 
 
-GET /voice_messages?for=:user_id <br/>
+GET /voice_messages.json?for=:user_id <br/>
 Get a list of voice messages for a user
 
-GET /voice_messages/:id <br/>
+GET /voice_messages/:id.json <br/>
 Get a single voice message
 
 POST /voice_messages <br/>
@@ -31,7 +50,7 @@ Create a new voice message
 
 
 Objects Contracts
-------------------
+--------------------------
 
 ### User:
 
