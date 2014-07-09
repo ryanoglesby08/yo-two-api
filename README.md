@@ -1,4 +1,6 @@
-This is the API for a voice message system.
+# YoTWo
+
+This is the API for a the YoTWo app, a voice message sharing system.
 
 Requirements
 --------------------------
