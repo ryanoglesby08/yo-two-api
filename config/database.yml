@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: easter-egg-hunt-api_production
-  username: easter-egg-hunt-api
-  password: <%= ENV['EASTER-EGG-HUNT-API_DATABASE_PASSWORD'] %>
+  database: yo-two-api_production
+  username: yo-two-api
+  password: <%= ENV['YO-TWO-API_DATABASE_PASSWORD'] %>
